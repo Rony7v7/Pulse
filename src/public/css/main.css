@@ -1,0 +1,65 @@
+footer {
+    color: white;
+}
+
+body {
+    /* importar background svg */
+    background-image: url("/svg/bg-white.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.tasks-section {
+    width: 50%;
+    height: 90%;
+    padding: 15px;
+    margin: 0px;
+
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.tasks-list {
+    height: 100%;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.task { 
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.priority-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+    background-color: red;
+
+    box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+
+}

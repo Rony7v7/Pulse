@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulse</title>
+    <%- include('partials/head') %>
 </head>
+
 <body>
-    tareas
+    <!-- <%- include('partials/navigation') %> -->
+
+    <main class="container vh-100 d-flex align-items-center">
+        <section class="justify-content-center w-50">
+            <div>
+                <h1>Pulse</h1>
+            </div>
+            <div>
+                <p>12:00</p>
+                <p>Lunes, 5 de diciembre</p>
+            </div>
+        </section>
+
+        <section class="tasks-section">
+            <div>
+                <h1>Tareas y Recordatorios</h1>
+                <p>Buenas noches, <%= username %>
+                </p>
+            </div>
+
+            <div class="tasks-container h-75 m-10">
+
+                <ul class="tasks-list">
+                    <% tasks.forEach(task=> { %>
+                        <li class="task">
+                            <input type="checkbox" class="checkbox" id=<%= task.id %>>
+                            <label for=<%= task.id %>><%= task.title %></label>
+                            <div class="priority-circle"></div>
+                        </li>
+                    <% }); %>
+                </ul>
+
+            </div>
+
+            <div>
+                <button class="btn btn-primary ">Agregar Tarea</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('partials/footer') %>
+
 </body>
+
 </html>

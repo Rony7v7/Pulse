@@ -1,11 +1,16 @@
 import { Router } from 'express';
+import TaskManager from '../controllers/TaskManager.js';
 
 const router = Router();
 
-router.get('/', (req, res) => { res.render('index') });
+const taskManager = new TaskManager();
 
-router.get('/about', (req, res) => { res.render('about') });
+router.get('/', (req, res) => { 
+    res.render('index',{username: 'Rony', tasks: taskManager.renderTasks()}) 
+});
 
-router.get('/contact', (req, res) => { res.render('contact') });
+router.get('/about', (req, res) => { res.render('index') });
+
+router.get('/contact', (req, res) => { res.render('index') });
 
 export default router;
