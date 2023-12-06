@@ -4,9 +4,9 @@ class TaskManager { //clase para manejar las tareas
     constructor() {
         this.tasks = [];
         // tests
-        this.addTask(new Task('Task 1', 'Description 1', '2021-01-01', 'low', 'todo'));
-        this.addTask(new Task('Task 2', 'Description 2', '2021-01-02', 'medium', 'todo'));
-        this.addTask(new Task('Task 3', 'Description 3', '2021-01-03', 'high', 'todo'));
+        this.addTask(new Task('Task 1', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
+        this.addTask(new Task('Gafas', 'Edificio Nucleo Profesional Piso 5', '2021-01-02', 'priority-2', 'todo'));
+        this.addTask(new Task('Cita Medica', 'Doctor Alfonso omdragon ', '2021-01-03', 'priority-3', 'todo'));
     }
 
     addTask(task) { //funcion para añadir tarea

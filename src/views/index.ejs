@@ -35,28 +35,34 @@
         </section>
 
         <section class="tasks-section">
-            <div>
+            <header>
                 <h1>Tareas y Recordatorios</h1>
-                <p><%= date[3] %>, <%= username %> ✌</p>
-            </div>
+                <h4><%= date[3] %>, <%= username %> ✌</h4>
+            </header>
 
             <div class="tasks-container h-75 m-10">
 
                 <ul class="tasks-list">
                     <% tasks.forEach(task=> { %>
                         <li class="task">
-                            <input type="checkbox" class="checkbox" id=<%=task.id %>>
-                            <label for=<%=task.id %>><%= task.title %></label>
-                            <div>description</div>
-                            <div class="priority-circle"></div>
+                            <div class="task-header">
+                                <input type="checkbox" class="checkbox" id="<%= task.id %>">
+                                <label for="<%= task.id %>"><%= task.title %></label>
+                                <div class="text-body-secondary"><%= task.dueDate %> | <%= task.status %></div>
+                            </div>
+                            <div class="task-content">
+                                <div class="text-body-secondary"><%= task.description %></div>
+                            </div>
+                            <div class="priority-circle <%= task.priority %>"></div>
                         </li>
                         <% }); %>
                 </ul>
 
             </div>
 
-            <div>
-                <button class="btn btn-primary fixed-bottom">Agregar Tarea</button>
+            <div class="task input">
+                <input type="text">
+                <button class="btn btn-primary">Agregar Tarea</button>
             </div>
 
         </section>
