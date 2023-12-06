@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'QuickSand';
+    src: url( '/fonts/Quicksand_Book.otf' );
+}
+
 footer {
     color: white;
 }
@@ -62,4 +67,48 @@ body {
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 10px );
 
+}
+
+ .time { /* Hora principal en pantalla */
+    margin: 0px;
+    padding: 0px;
+
+    /* Fancy font */
+    font-family: 'Quicksand', sans-serif;
+
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+
+    font-size: 125px;
+    font-weight: bold;
+    color: white;
+
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+.time-abr {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 40px;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+
+    font-family: 'Quicksand', sans-serif;
+
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+
+}
+
+.date { /* Fecha principal en pantalla */
+    margin: 0px;
+    padding: 0px;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+
+    font-family: 'Quicksand', sans-serif;
+
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
 }

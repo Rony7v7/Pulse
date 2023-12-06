@@ -6,7 +6,10 @@ const router = Router();
 const taskManager = new TaskManager();
 
 router.get('/', (req, res) => { 
-    res.render('index',{username: 'Rony', tasks: taskManager.renderTasks()}) 
+    res.render('index',{
+        username: 'Rony', 
+        tasks: taskManager.renderTasks(),
+        date: taskManager.getDate()}) 
 });
 
 router.get('/about', (req, res) => { res.render('index') });

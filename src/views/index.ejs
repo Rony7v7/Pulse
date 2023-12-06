@@ -10,20 +10,34 @@
 
     <main class="container vh-100 d-flex align-items-center">
         <section class="justify-content-center w-50">
-            <div>
+            <div class="">
                 <h1>Pulse</h1>
             </div>
+
             <div>
-                <p>12:00</p>
-                <p>Lunes, 5 de diciembre</p>
+
+                <div class="row align-items-end">
+                    <time class="col-auto time">
+                        <%= date[0]%>
+                    </time>
+                    <time class="col-sm-2 time-abr">
+                        <%= date[1]%>
+                    </time>
+                </div>
+
+                <div>
+                    <time class="date">
+                        <%= date[2]%>
+                    </time>
+                </div>
+
             </div>
         </section>
 
         <section class="tasks-section">
             <div>
                 <h1>Tareas y Recordatorios</h1>
-                <p>Buenas noches, <%= username %>
-                </p>
+                <p><%= date[3] %>, <%= username %> ✌</p>
             </div>
 
             <div class="tasks-container h-75 m-10">
@@ -31,17 +45,18 @@
                 <ul class="tasks-list">
                     <% tasks.forEach(task=> { %>
                         <li class="task">
-                            <input type="checkbox" class="checkbox" id=<%= task.id %>>
-                            <label for=<%= task.id %>><%= task.title %></label>
+                            <input type="checkbox" class="checkbox" id=<%=task.id %>>
+                            <label for=<%=task.id %>><%= task.title %></label>
+                            <div>description</div>
                             <div class="priority-circle"></div>
                         </li>
-                    <% }); %>
+                        <% }); %>
                 </ul>
 
             </div>
 
             <div>
-                <button class="btn btn-primary ">Agregar Tarea</button>
+                <button class="btn btn-primary fixed-bottom">Agregar Tarea</button>
             </div>
 
         </section>
