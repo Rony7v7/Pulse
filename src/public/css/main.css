@@ -169,3 +169,105 @@ h1 {
 .priority-3 {
     background-color: #21b902c4;
 }
+
+.task-form {
+    width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 25px );
+    -webkit-backdrop-filter: blur( 25px ); 
+
+    user-select: none;
+}
+
+.task-form input {
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.5 );
+
+    color: #343a40;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+
+    border: none;
+    outline: none;
+}
+
+.task-form input::placeholder {
+    color: #343a40;
+    font-family: 'Quicksand Light', sans-serif;
+    font-size: 15px;
+}
+
+.task-form-date {
+    height: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.5 );
+
+    color: #343a40;
+    font-family: 'Quicksand Light', sans-serif;
+    font-size: 15px;
+
+    border: none;
+    outline: none;
+}
+
+.task-form-date::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.task-form-description {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.5 );
+
+    color: #343a40;
+    font-family: 'Quicksand Light', sans-serif;
+    font-size: 15px;
+
+    border: none;
+    outline: none;
+}
+
+.task-form-priority {
+    /* Clase para la etiqueta select */
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 20px;
+}
+
+.task-form-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0px;
+}
+
+dialog {
+    background-color: transparent;
+    border: none;
+
+}
+
