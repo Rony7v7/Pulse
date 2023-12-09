@@ -29,10 +29,18 @@ body {
 
     /* importar font */
     font-family: 'Quicksand', sans-serif;
+
+    /* Sin scrollbar */
+    overflow: inherit;
+
 }
 
 h1 {
     font-family: 'Quicksand Bold', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
 }
 
 .time { /* Hora principal en pantalla */
@@ -97,9 +105,29 @@ h1 {
 
 .tasks-list {
     height: 100%;
-    overflow-y: auto;
     list-style: none;
     padding: 0;
+    overflow-y: auto;
+}
+
+.tasks-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tasks-list::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px );
+}
+
+.tasks-list::-webkit-scrollbar-track {
+    border-radius: 6px;
+
+    background-color: #f1f1f148;
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px ); 
 }
 
 .task { 

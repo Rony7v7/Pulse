@@ -40,37 +40,21 @@
                 <h4><%= date[3] %>, <%= username %> ✌</h4>
             </header>
 
+            <div class="container">
+                <button id="btnAddTask">Agregar Tarea</button>
+                <button class="options-button">&#8230;</button>
+            </div>
+
             <div class="tasks-container h-75 m-10">
-
-                <ul class="tasks-list">
-                    <% tasks.forEach(task=> { %>
-                        <li class="task">
-                            <div class="task-header">
-                                <input type="checkbox" class="checkbox" id="<%= task.id %>">
-                                <label for="<%= task.id %>"><%= task.title %></label>
-                                <div class="text-body-secondary"><%= task.dueDate %> | <%= task.status %></div>
-                            </div>
-                            <div class="task-content">
-                                <div class="text-body-secondary"><%= task.description %></div>
-                            </div>
-                            <div class="priority-circle <%= task.priority %>"></div>
-                        </li>
-                        <% }); %>
-                </ul>
-
+                <%- include('partials/tasksList', {tasks: tasks}) %>
             </div>
-
-            <div class="task input">
-                <input type="text">
-                <button class="btn btn-primary">Agregar Tarea</button>
-            </div>
-
         </section>
 
     </main>
 
     <%- include('partials/footer') %>
 
+    <script src="../public/js/clientScripts.js"></script>
 </body>
 
 </html>

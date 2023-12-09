@@ -1,0 +1,15 @@
+<ul class="tasks-list">
+    <% tasks.forEach(task=> { %>
+        <li class="task">
+            <div class="task-header">
+                <input type="checkbox" class="checkbox" id="<%= task.id %>">
+                <label for="<%= task.id %>"><%= task.title %></label>
+                <div class="text-body-secondary"><%= task.dueDate %> | <%= task.status %></div>
+            </div>
+            <div class="task-content">
+                <div class="text-body-secondary"><%= task.description %></div>
+            </div>
+            <div class="priority-circle <%= task.priority %>"></div>
+        </li>
+        <% }); %>
+</ul>
