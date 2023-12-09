@@ -12,7 +12,6 @@ app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //modulo para añadir logica al html
 app.use(indexRoutes);
 
-// app.use(express.static(join(__dirname, 'public'))); //modulo para añadir css
 app.use(express.static(join(__dirname, 'public'))); //modulo para añadir css
 
 app.listen(3000)

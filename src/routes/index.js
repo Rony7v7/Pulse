@@ -17,6 +17,9 @@ router.get('/about', (req, res) => { res.render('index') });
 
 router.get('/contact', (req, res) => { res.render('index') });
 
+router.get('/login', (req, res) => { res.render('login') });
+
+
 router.post('/', (req, res) => { 
     console.log(req.body);
 });

@@ -4,7 +4,9 @@ class TaskManager { //clase para manejar las tareas
     constructor() {
         this.tasks = [];
         // tests
-        this.addTask(new Task('Task ', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
+        this.addTask(new Task('Task1 ', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
+        this.addTask(new Task('Task2', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
+        this.addTask(new Task('Task3 ', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
     }
 
     addTask(task) { //funcion para añadir tarea
@@ -16,7 +18,7 @@ class TaskManager { //clase para manejar las tareas
     }
 
     renderTasks() {
-        return this.tasks;
+        return this.tasks.reverse();
     }
 
     getDate() { // Retorna un array con la hora actual (hh:mm), el formato (pm o am) y la fecha (<DIA>, <dia> de <MES> )

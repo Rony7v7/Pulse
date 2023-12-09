@@ -169,3 +169,106 @@ h1 {
 .priority-3 {
     background-color: #21b902c4;
 }
+
+.task-form {
+    width: 50%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px ); 
+
+    user-select: none;
+}
+
+.task-form input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.25 );
+
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    border: none;
+    outline: none;
+}
+
+.task-form input::placeholder {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.task-form button {
+    width: 100px;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+
+    background: rgba( 255, 255, 255, 0.25 );
+
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    border: none;
+    outline: none;
+}
+
+.task-form button:hover {
+    cursor: pointer;
+}
+
+.task-form button:active {
+    transform: scale(0.95);
+}
+
+.task-form button:focus {
+    outline: none;
+}
+
+.task-form button:disabled {
+    background: rgba( 255, 255, 255, 0.1 );
+    color: rgba( 255, 255, 255, 0.5 );
+}
+
+.task-form button:disabled:hover {
+    cursor: not-allowed;
+}
+
+.task-form button:disabled:active {
+    transform: scale(1);
+}
+
+.task-form button:disabled:focus {
+    outline: none;
+}
+
+.task-form button:enabled {
+    background: rgba( 255, 255, 255, 0.25 );
+    color: white;
+}
+
+.task-form button:enabled:hover {
+    cursor: pointer;
+}
+
+dialog {
+    background-color: transparent;
+    border: none;
+}
+
