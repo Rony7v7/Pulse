@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import TaskManager from '../controllers/TaskManager.js'
+import Task from '../models/Task.js';
 
 const router = Router();
 
@@ -19,13 +20,9 @@ router.get('/contact', (req, res) => { res.render('index') });
 
 router.get('/login', (req, res) => { res.render('login') });
 
-router.post('/add-Task', (req, res) => { 
-    console.log(req.body);
-})
-
 router.post('/', (req, res) => { 
-    console.log(req.body);
-    taskManager.addTask(req.body);
+    const newTask = new Task(req.body.title, req.body.description, req.body.dueDate, req.body.priority, req.body.category);
+    taskManager.addTask(newTask);
     res.redirect('/');
 })
 

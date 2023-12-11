@@ -4,7 +4,7 @@
             <div class="task-header">
                 <input type="checkbox" class="checkbox" id="<%= task.id %>">
                 <label for="<%= task.id %>"><%= task.title %></label>
-                <div class="text-body-secondary"><%= task.dueDate %> | <%= task.category %></div>
+                <div class="text-body-secondary"><%= task.dueDateView %> | <%= task.status %></div>
             </div>
             <div class="task-content">
                 <div class="text-body-secondary"><%= task.description %></div>

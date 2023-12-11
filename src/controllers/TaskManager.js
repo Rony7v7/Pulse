@@ -1,5 +1,3 @@
-import Task from '../models/Task.js';
-
 class TaskManager { //clase para manejar las tareas
     constructor() {
         this.tasks = [];
@@ -14,7 +12,20 @@ class TaskManager { //clase para manejar las tareas
     }
 
     renderTasks() {
-        return this.tasks.reverse();
+        this.sortTasksBy('dueDate');
+        return this.tasks;
+    }
+
+    sortTasksBy(field) {
+        this.tasks.sort((a, b) => {
+            if (a[field] < b[field]) {
+                return -1;
+            }
+            if (a[field] > b[field]) {
+                return 1;
+            }
+            return 0;
+        });
     }
 
     getDate() { // Retorna un array con la hora actual (hh:mm), el formato (pm o am) y la fecha (<DIA>, <dia> de <MES> )
@@ -43,6 +54,7 @@ class TaskManager { //clase para manejar las tareas
 
         return [hour.split(' ')[0], format, `${dayName}, ${day} de ${month}`, aux];
     }
+
 
 }
 
