@@ -15,8 +15,8 @@ btnAddTask.addEventListener('click', () => {
 
             <div class="task-form-col">
                 <input type="text" name="title" id="title" placeholder="Titulo" required>
-                <input type="date" name="date" id="date" required>
-                <input type="text" name="category" id="title" placeholder="Categoria" required>
+                <input type="date" name="dueDate" id="date" required>
+                <input type="" name="category" id="category" placeholder="Categoria" autocomplete="off">
             </div>
 
             <div class="task-form-col">

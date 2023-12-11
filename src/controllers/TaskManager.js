@@ -3,10 +3,6 @@ import Task from '../models/Task.js';
 class TaskManager { //clase para manejar las tareas
     constructor() {
         this.tasks = [];
-        // tests
-        this.addTask(new Task('Task1 ', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
-        this.addTask(new Task('Task2', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
-        this.addTask(new Task('Task3 ', 'Lorem ipsum dolor sit amet consectetur', '2021-01-01', 'priority-1', 'todo'));
     }
 
     addTask(task) { //funcion para añadir tarea
