@@ -34,7 +34,7 @@
             </div>
         </section>
 
-        <section class="tasks-section">
+        <section class="tasks-section mh-100">
             <header>
                 <h1>Tareas y Recordatorios</h1>
                 <h4><%= date[3] %>, <%= username %> ✌</h4>
@@ -46,7 +46,7 @@
                 <button class="options-button">&#8230;</button>
             </div>
 
-            <div class="tasks-container mh-100 m-10 d-flex flex-column">
+            <div class="tasks-container">
                 <%- include('partials/tasksList', {tasksPending: tasksPending, tasksCompleted: tasksCompleted}) %>
             </div>
         </section>

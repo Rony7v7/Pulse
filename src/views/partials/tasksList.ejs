@@ -1,5 +1,5 @@
 <h4>Pendientes</h4>
-<ul class="tasks-list mw-100">
+<ul class="tasks-list">
     <% tasksPending.forEach(task=> {%>
         <li class="task">
             <div class="task-header">
@@ -18,7 +18,7 @@
 <% if(tasksCompleted.lenght !== 0) {%>
 <h4>Completadas</h4>
 <% } %>
-<ul class="tasks-list mh-75">
+<ul class="tasks-list task-list-completed">
     <% tasksCompleted.forEach(task=> {%>
         <li class="task">
             <div class="task-header">

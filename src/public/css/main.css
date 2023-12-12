@@ -135,6 +135,22 @@ dialog {
     -webkit-backdrop-filter: blur( 15px ); 
 }
 
+.tasks-list-completed {
+    max-height: 30%;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin: 0px;
+    padding: 0px;
+
+    max-height: 85%;
+}
+
 .task { 
     display: flex;
     justify-content: space-between;
