@@ -33,4 +33,14 @@ router.post('/complete-tasks', (req, res) => {
     res.redirect('/');
 });
 
+router.delete('/delete-task/:id', (req, res) => {
+    taskManager.deleteTask(req.params.id);
+    res.redirect('/');
+});
+
+router.post('/delete-complete-tasks', (req, res) => {
+    taskManager.deleteCompleteTasks();
+    res.redirect('/');
+});
+
 export default router;

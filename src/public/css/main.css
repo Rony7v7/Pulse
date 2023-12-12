@@ -293,3 +293,32 @@ dialog {
     margin: 0px;
 }
 
+.cm-wrapper {
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    width: auto;
+
+    background: rgba( 255, 255, 255, 0.75 );
+    color: black;
+    border-radius: 10px;
+}
+
+.cm-wrapper .cm-menu {
+    padding: 10px 12px;
+    margin: 0px;
+}
+
+.cm-content .cm-item {
+    list-style: none;
+    font-size: 15px;
+    display: flex;
+    cursor: pointer;
+    padding: 0 5px 0 10px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.cm-content .cm-item:hover {
+    background: rgba( 255, 255, 255, 0.5 );
+}

@@ -90,6 +90,10 @@ class TaskManager { //clase para manejar las tareas
         });
     }
 
+    deleteCompleteTasks() {
+        this.tasks = this.tasks.filter((task) => !task.isCompleted);
+    }
+
 }
 
 

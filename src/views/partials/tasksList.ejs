@@ -1,3 +1,4 @@
+<%- include('contextMenu') %>
 <h4>Pendientes</h4>
 <ul class="tasks-list">
     <% tasksPending.forEach(task=> {%>
@@ -16,7 +17,10 @@
 </ul>
 
 <% if(tasksCompleted.lenght !== 0) {%>
-<h4>Completadas</h4>
+<div class="d-flex ">
+    <h4>Completadas</h4>
+    <button id="btnDeleteCompleteTasks">DEL</button>
+</div>
 <% } %>
 <ul class="tasks-list task-list-completed">
     <% tasksCompleted.forEach(task=> {%>
