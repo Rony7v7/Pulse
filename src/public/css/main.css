@@ -113,6 +113,7 @@ dialog {
     list-style: none;
     padding: 0;
     overflow-y: auto;
+    width: 100%;
 }
 
 .tasks-list::-webkit-scrollbar {
@@ -149,6 +150,7 @@ dialog {
     padding: 0px;
 
     max-height: 85%;
+    width: 100%;
 }
 
 .task { 
