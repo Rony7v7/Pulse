@@ -166,6 +166,11 @@ dialog {
     user-select: none;
 }
 
+/* task hoover */
+.task:hover {
+    background: rgba( 255, 255, 255, 0.5 );
+}
+
 .task-checkbox {
     margin-right: 10px;
 }

@@ -68,3 +68,24 @@ btnCheckTask.addEventListener('click', () => {
     document.body.appendChild(form);
     form.submit();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener todos los elementos con la clase 'task'
+    const tasks = document.querySelectorAll('.task');
+
+    // Iterar sobre cada tarea
+    tasks.forEach(task => {
+        // Obtener la casilla de verificación y el contenedor
+        const checkbox = task.querySelector('.task-checkbox');
+        const container = task;
+
+        // Agregar un listener al contenedor
+        container.addEventListener('click', function(event) {
+            // Verificar si el clic fue en el contenedor y no en la casilla de verificación
+            if (event.target !== checkbox) {
+                // Cambiar el estado de la casilla de verificación
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+    });
+});
