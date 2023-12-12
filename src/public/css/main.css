@@ -39,6 +39,12 @@ h1 {
     font-family: 'Quicksand Bold', sans-serif;
 }
 
+dialog {
+    background-color: transparent;
+    border: none;
+
+}
+
 ::-webkit-scrollbar {
     width: 1px;
 }
@@ -104,7 +110,6 @@ h1 {
 }
 
 .tasks-list {
-    height: 100%;
     list-style: none;
     padding: 0;
     overflow-y: auto;
@@ -143,7 +148,7 @@ h1 {
     user-select: none;
 }
 
-.checkbox {
+.task-checkbox {
     margin-right: 10px;
 }
 
@@ -263,11 +268,5 @@ h1 {
     justify-content: center;
 
     margin: 0px;
-}
-
-dialog {
-    background-color: transparent;
-    border: none;
-
 }
 

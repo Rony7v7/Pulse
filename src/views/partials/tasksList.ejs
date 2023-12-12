@@ -1,15 +1,34 @@
-<ul class="tasks-list">
-    <% tasks.forEach(task=> { %>
+<h4>Pendientes</h4>
+<ul class="tasks-list mw-100">
+    <% tasksPending.forEach(task=> {%>
         <li class="task">
             <div class="task-header">
-                <input type="checkbox" class="checkbox" id="<%= task.id %>">
+                <input type="checkbox" class="task-checkbox" id="<%= task.id %>">
                 <label for="<%= task.id %>"><%= task.title %></label>
-                <div class="text-body-secondary"><%= task.dueDateView %> | <%= task.status %></div>
+                <div class="text-body-secondary"><%= task.dueDateView %> | <%= task.dueDate %></div>
             </div>
             <div class="task-content">
                 <div class="text-body-secondary"><%= task.description %></div>
             </div>
             <div class="priority-circle <%= task.priority %>"></div>
         </li>
-        <% }); %>
+    <% }); %>
+</ul>
+
+<% if(tasksCompleted.lenght !== 0) {%>
+<h4>Completadas</h4>
+<% } %>
+<ul class="tasks-list mh-75">
+    <% tasksCompleted.forEach(task=> {%>
+        <li class="task">
+            <div class="task-header">
+                <label><%= task.title %></label>
+                <div class="text-body-secondary">Completada | <%= task.dueDate %></div>
+            </div>
+            <div class="task-content">
+                <div class="text-body-secondary"><%= task.description %></div>
+            </div>
+            <div class="priority-circle"></div>
+        </li>
+    <% }); %>
 </ul>

@@ -1,11 +1,11 @@
 class Task {
     constructor(title, description, dueDate, priority, category) {
-        this.id = Date.now();
+        this.id = title+Date.now();
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.status = 'pending';
+        this.isCompleted = false;
         this.category = category;
         this.dueDateView = '';
         
@@ -28,9 +28,6 @@ class Task {
         return this.priority;
     }
 
-    getStatus() {
-        return this.status;
-    }
 
     setDueDateView() {
         if (this.dueDate === '') {
@@ -55,6 +52,10 @@ class Task {
                 this.dueDateView = `En ${diffDays} días`;
                 break;
         }
+    }
+
+    complete() {
+        this.isCompleted = true;
     }
 
 }

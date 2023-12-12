@@ -42,11 +42,12 @@
 
             <div class="container">
                 <button id="btnAddTask">Agregar Tarea</button>
+                <button id="btnCheckTask" class="">OK</button>
                 <button class="options-button">&#8230;</button>
             </div>
 
-            <div class="tasks-container h-75 m-10">
-                <%- include('partials/tasksList', {tasks: tasks}) %>
+            <div class="tasks-container mh-100 m-10 d-flex flex-column">
+                <%- include('partials/tasksList', {tasksPending: tasksPending, tasksCompleted: tasksCompleted}) %>
             </div>
         </section>
 

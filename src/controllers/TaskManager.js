@@ -1,6 +1,30 @@
+import Task from '../models/Task.js';
+
 class TaskManager { //clase para manejar las tareas
     constructor() {
         this.tasks = [];
+        // test
+        this.tasks.push(new Task('Tarea 1', 'Descripcion 1', '2024-01-01', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 2', 'Descripcion 2', '2024-01-02', 'priority-2', 'category-2'));
+        this.tasks.push(new Task('Tarea 3', 'Descripcion 3', '2024-01-03', 'priority-3', 'category-3'));
+        this.tasks.push(new Task('Tarea 4', 'Descripcion 4', '2024-01-04', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 5', 'Descripcion 5', '2024-01-05', 'priority-2', 'category-2'));
+        this.tasks.push(new Task('Tarea 6', 'Descripcion 6', '2024-01-06', 'priority-3', 'category-3'));
+        this.tasks.push(new Task('Tarea 7', 'Descripcion 7', '2024-01-07', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 8', 'Descripcion 8', '2024-01-08', 'priority-2', 'category-2'));
+        this.tasks.push(new Task('Tarea 9', 'Descripcion 9', '2024-01-09', 'priority-3', 'category-3'));
+        this.tasks.push(new Task('Tarea 10', 'Descripcion 10', '2024-01-10', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 11', 'Descripcion 11', '2024-01-11', 'priority-2', 'category-2'));
+        this.tasks.push(new Task('Tarea 12', 'Descripcion 12', '2024-01-12', 'priority-3', 'category-3'));
+        this.tasks.push(new Task('Tarea 13', 'Descripcion 13', '2024-01-13', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 14', 'Descripcion 14', '2024-01-14', 'priority-2', 'category-2'));
+        this.tasks.push(new Task('Tarea 15', 'Descripcion 15', '2024-01-15', 'priority-3', 'category-3'));
+        this.tasks.push(new Task('Tarea 16', 'Descripcion 16', '2024-01-16', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 17', 'Descripcion 17', '2024-01-17', 'priority-2', 'category-2'));
+        this.tasks.push(new Task('Tarea 18', 'Descripcion 18', '2024-01-18', 'priority-3', 'category-3'));
+        this.tasks.push(new Task('Tarea 19', 'Descripcion 19', '2024-01-19', 'priority-1', 'category-1'));
+        this.tasks.push(new Task('Tarea 20', 'Descripcion 20', '2024-01-20', 'priority-2', 'category-2'));
+        
     }
 
     addTask(task) { //funcion para añadir tarea
@@ -13,7 +37,11 @@ class TaskManager { //clase para manejar las tareas
 
     renderTasks() {
         this.sortTasksBy('dueDate');
-        return this.tasks;
+        
+        let tasksPending = this.tasks.filter((task) => !task.isCompleted);
+        let tasksCompleted = this.tasks.filter((task) => task.isCompleted); 
+
+        return [tasksPending, tasksCompleted];
     }
 
     sortTasksBy(field) {
@@ -55,6 +83,12 @@ class TaskManager { //clase para manejar las tareas
         return [hour.split(' ')[0], format, `${dayName}, ${day} de ${month}`, aux];
     }
 
+    completeTasks(ids) {
+        ids.forEach((id) => {
+            const task = this.tasks.find((task) => task.id === id);
+            task.complete();
+        });
+    }
 
 }
 
