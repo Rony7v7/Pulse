@@ -4,7 +4,7 @@ import Task from '../models/Task.js';
 
 const router = Router();
 
-const taskManager = new TaskManager();
+const taskManager = new TaskManager('rony');
 
 router.get('/', (req, res) => { 
     let tasks = taskManager.renderTasks();
