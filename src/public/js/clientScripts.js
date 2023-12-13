@@ -6,6 +6,7 @@ const btnDeleteTask = document.getElementById('btnDeleteTask');
 const btnEditTask = document.getElementById('btnEditTask');
 
 const tasks = document.querySelectorAll('.task');
+let currentTaskId = null;
 
 btnAddTask.addEventListener('click', () => {
     const dialog = document.createElement('dialog');
@@ -67,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tasks.forEach(task => {
         const checkbox = task.querySelector('.task-checkbox');
-        task.classList.remove('selected');
 
         task.addEventListener('click', function (event) {
             if (event.target !== checkbox) {
@@ -95,26 +95,25 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Asignar nueva clase al task actual
-            task.classList.add('selected');
+            currentTaskId = task.id;
         });
 
     });
 });
 
-btnDeleteTask.addEventListener('click', () => { // TODO: cambiar a FETCH 
-    const taskId = document.querySelector('.selected').id;
-    const form = document.createElement('form');
+document.addEventListener('click', function (event) {
+    contextmenu.style.display = 'none';
+    contextmenu.style.visibility = 'hidden';
+});
 
-    form.setAttribute('method', 'POST');
-    form.setAttribute('action', '/delete-task');
-
-    const input = document.createElement('input');
-    input.setAttribute('type', 'hidden');
-    input.setAttribute('name', 'task');
-    input.setAttribute('value', taskId);
-    form.appendChild(input);
-    document.body.appendChild(form);
-    form.submit();
+btnDeleteTask.addEventListener('click', () => {
+    fetch(`/delete-task?id=${currentTaskId}`, {
+        method: 'DELETE'
+    }).then((res) => {
+        if (res.ok) {
+            document.getElementById(currentTaskId).remove();
+        }
+    });
 });
 
 btnDeleteCompleteTasks.addEventListener('click', () => {
