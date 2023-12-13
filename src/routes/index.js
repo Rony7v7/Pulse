@@ -21,6 +21,11 @@ router.get('/contact', (req, res) => { res.render('index') });
 
 router.get('/login', (req, res) => { res.render('login') });
 
+router.get('/get-task', (req, res) => {
+    const task = taskManager.getTask(req.query.id);
+    res.json(task);
+});
+
 router.post('/add-task', (req, res) => { 
     const newTask = new Task(req.body.title, req.body.description, req.body.dueDate, req.body.priority, req.body.category);
     taskManager.addTask(newTask);

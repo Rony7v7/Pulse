@@ -322,3 +322,7 @@ dialog {
 .cm-content .cm-item:hover {
     background: rgba( 255, 255, 255, 0.5 );
 }
+
+.disabled {
+    display: none;
+}

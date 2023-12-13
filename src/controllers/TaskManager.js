@@ -35,6 +35,10 @@ class TaskManager { //clase para manejar las tareas
         this.tasks = this.tasks.filter((task) => task.id !== id);
     }
 
+    getTask(id) {
+        return this.tasks.find((task) => task.id === id);
+    }
+
     renderTasks() {
         this.sortTasksBy('dueDate');
         
