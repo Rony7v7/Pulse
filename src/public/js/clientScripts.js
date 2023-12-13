@@ -129,9 +129,8 @@ btnDeleteCompleteTasks.addEventListener('click', () => {
 });
 
 btnEditTask.addEventListener('click', () => {
-    const taskId = document.querySelector('.selected').id;
 
-    fetch(`/get-task?id=${taskId}`)
+    fetch(`/get-task?id=${currentTaskId}`)
     .then((res) => res.json())
     .then((task) => {
         const dialog = document.createElement('dialog');
