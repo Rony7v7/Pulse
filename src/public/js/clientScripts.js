@@ -119,13 +119,13 @@ btnDeleteTask.addEventListener('click', () => {
 });
 
 btnDeleteCompleteTasks.addEventListener('click', () => {
-
-    const form = document.createElement('form');
-    form.setAttribute('method', 'POST');
-    form.setAttribute('action', '/delete-complete-tasks');
-
-    document.body.appendChild(form);
-    form.submit();
+    fetch('/delete-complete-tasks', {
+        method: 'DELETE'
+    }).then((res) => {
+        if (res.ok) {
+            window.location.reload();
+        }
+    });
 });
 
 btnEditTask.addEventListener('click', () => {

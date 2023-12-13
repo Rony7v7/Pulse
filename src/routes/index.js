@@ -44,9 +44,9 @@ router.delete('/delete-task', (req, res) => {
     res.sendStatus(200);
 });
 
-router.post('/delete-complete-tasks', (req, res) => {
+router.delete('/delete-complete-tasks', (req, res) => {
     taskManager.deleteCompleteTasks();
-    res.redirect('/');
+    res.sendStatus(200);
 });
 
 export default router;
