@@ -1,4 +1,3 @@
-import { get } from 'http';
 import Task from '../models/Task.js';
 import { promises as fs } from 'fs';
 class TaskManager { //clase para manejar las tareas
@@ -21,7 +20,7 @@ class TaskManager { //clase para manejar las tareas
 
     async saveTasks() {
         try {
-            await fs.writeFile(this.filePATH, JSON.stringify(this.tasks));
+            await fs.writeFile(this.filePATH, JSON.stringify(this.tasks, null, 2));
         } catch (error) {
             console.error(error);
         }

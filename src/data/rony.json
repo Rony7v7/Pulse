@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "Tarea 21702491430912",
+    "title": "Tarea 2",
+    "description": "Descripcion 2",
+    "dueDate": "2023-12-20",
+    "priority": "priority-2",
+    "isCompleted": false,
+    "category": "personal",
+    "dueDateView": "En 7 días"
+  },
+  {
+    "id": "Tarea 31702491430912",
+    "title": "Tarea 3",
+    "description": "Descripcion 3",
+    "dueDate": "2023-12-20",
+    "priority": "priority-3",
+    "isCompleted": false,
+    "category": "personal",
+    "dueDateView": "En 7 días"
+  }
+]
