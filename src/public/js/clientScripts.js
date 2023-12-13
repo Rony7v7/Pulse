@@ -47,21 +47,23 @@ btnAddTask.addEventListener('click', () => {
 
 btnCheckTask.addEventListener('click', () => {
     const checkboxesChecked = document.querySelectorAll('.task-checkbox:checked');
+
     if (checkboxesChecked.length === 0) {
         return;
     }
-    const form = document.createElement('form');
-    form.setAttribute('method', 'POST');
-    form.setAttribute('action', '/complete-tasks');
-    checkboxesChecked.forEach((checkbox) => {
-        const input = document.createElement('input');
-        input.setAttribute('type', 'hidden');
-        input.setAttribute('name', 'tasks[]');
-        input.setAttribute('value', checkbox.id);
-        form.appendChild(input);
+
+    const tasks = Array.from(checkboxesChecked).map(checkbox => checkbox.id);
+    fetch('/complete-tasks', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ tasks })
+    }).then((res) => {
+        if (res.ok) {
+            window.location.reload();
+        }
     });
-    document.body.appendChild(form);
-    form.submit();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -111,7 +113,7 @@ btnDeleteTask.addEventListener('click', () => {
         method: 'DELETE'
     }).then((res) => {
         if (res.ok) {
-            document.getElementById(currentTaskId).remove();
+            window.location.reload();
         }
     });
 });

@@ -33,9 +33,9 @@ router.post('/add-task', (req, res) => {
 })
 
 router.post('/complete-tasks', (req, res) => { 
-    const tasksIds = req.body.tasks;
-    taskManager.completeTasks(tasksIds);
-    res.redirect('/');
+    const tasks = req.body.tasks;
+    taskManager.completeTasks(tasks);
+    res.sendStatus(200);
 });
 
 router.delete('/delete-task', (req, res) => {
