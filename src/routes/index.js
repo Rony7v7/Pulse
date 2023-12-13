@@ -38,6 +38,17 @@ router.post('/complete-tasks', (req, res) => {
     res.sendStatus(200);
 });
 
+router.post('/edit-task', (req, res) => {
+    const task = taskManager.getTask(req.body.currentTaskId);
+    task.title = req.body.title;
+    task.description = req.body.description;
+    task.dueDate = req.body.dueDate;
+    task.priority = req.body.priority;
+    task.category = req.body.category;
+    taskManager.saveTasks();
+    res.redirect('/');
+});
+
 router.delete('/delete-task', (req, res) => {
     const taskId = req.query.id;
     taskManager.deleteTask(taskId);

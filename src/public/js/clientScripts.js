@@ -139,6 +139,9 @@ btnEditTask.addEventListener('click', () => {
         dialog.innerHTML = `
         <form action="/edit-task" method="POST">
             <div class="task-form">
+
+                <input type="hidden" name="currentTaskId" value="${currentTaskId}">
+
                 <div class="task-form-col">
                     <input type="text" name="title" id="title" placeholder="Titulo" required value="${task.title}">
                     <input type="date" name="dueDate" id="date" required value="${task.dueDate}">
