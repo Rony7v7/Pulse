@@ -32,7 +32,7 @@ class TaskManager { //clase para manejar las tareas
     }
 
     deleteTask(id) {
-        this.tasks.deleteTask(id);
+        this.tasks = this.tasks.filter((task) => task.id !== id);
     }
 
     renderTasks() {

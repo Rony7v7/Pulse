@@ -2,7 +2,7 @@
 <h4>Pendientes</h4>
 <ul class="tasks-list">
     <% tasksPending.forEach(task=> {%>
-        <li class="task">
+        <li class="task" id="<%= task.id %>">
             <div class="task-header">
                 <input type="checkbox" class="task-checkbox" id="<%= task.id %>">
                 <label ><%= task.title %></label>
@@ -24,7 +24,7 @@
 <% } %>
 <ul class="tasks-list task-list-completed">
     <% tasksCompleted.forEach(task=> {%>
-        <li class="task">
+        <li class="task" id="<%= task.id %>">
             <div class="task-header">
                 <label><%= task.title %></label>
                 <div class="text-body-secondary">Completada | <%= task.dueDate %></div>

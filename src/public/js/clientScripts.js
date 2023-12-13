@@ -2,6 +2,9 @@ const btnAddTask = document.getElementById('btnAddTask');
 const btnCheckTask = document.getElementById('btnCheckTask');
 const btnDeleteCompleteTasks = document.getElementById('btnDeleteCompleteTasks');
 const contextmenu = document.querySelector('.cm-wrapper');
+const deleteTask = document.getElementById('btnDeleteTask');
+
+const tasks = document.querySelectorAll('.task');
 
 btnAddTask.addEventListener('click', () => {
     const dialog = document.createElement('dialog');
@@ -61,19 +64,18 @@ btnCheckTask.addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const tasks = document.querySelectorAll('.task');
 
     tasks.forEach(task => {
         const checkbox = task.querySelector('.task-checkbox');
-        const container = task;
+        task.classList.remove('selected');
 
-        container.addEventListener('click', function(event) {
+        task.addEventListener('click', function(event) {
             if (event.target !== checkbox) {
                 checkbox.checked = !checkbox.checked;
             }
         });
 
-        container.addEventListener('contextmenu', function(event) {
+        task.addEventListener('contextmenu', function(event) {
             event.preventDefault();
 
             const x = task.offsetLeft + task.offsetWidth;
@@ -84,25 +86,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
             contextmenu.style.display = 'block';
             contextmenu.style.visibility = 'visible';
-        });
 
-        const deleteTask = document.getElementById('btnDeleteTask');
-        deleteTask.addEventListener('click', () => {
-            const form = document.createElement('form');
-            form.setAttribute('method', 'POST');
-            form.setAttribute('action', '/delete-task');
-
-            const input = document.createElement('input');
-            input.setAttribute('type', 'hidden');
-            input.setAttribute('name', 'task');
-            input.setAttribute('value', container.id);
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-            form.submit();
+            // Asignar nueva clase al task actual
+            task.classList.add('selected');
         });
 
     });
+});
+
+deleteTask.addEventListener('click', () => {
+    const taskId = document.querySelector('.selected').id;
+    const form = document.createElement('form');
+
+    form.setAttribute('method', 'POST');
+    form.setAttribute('action', '/delete-task');
+    
+    const input = document.createElement('input');
+    input.setAttribute('type', 'hidden');
+    input.setAttribute('name', 'task');
+    input.setAttribute('value', taskId);
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
 });
 
 btnDeleteCompleteTasks.addEventListener('click', () => {

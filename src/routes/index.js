@@ -33,8 +33,14 @@ router.post('/complete-tasks', (req, res) => {
     res.redirect('/');
 });
 
-router.delete('/delete-task/:id', (req, res) => {
+router.delete('/delete-task:id', (req, res) => {
     taskManager.deleteTask(req.params.id);
+    res.redirect('/');
+});
+
+router.post('/delete-task', (req, res) => {
+    const taskId = req.body.task;
+    taskManager.deleteTask(taskId);
     res.redirect('/');
 });
 
