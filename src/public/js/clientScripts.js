@@ -74,11 +74,19 @@ btnCheckTask.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    if (document.getElementById('tasks-completed-ul').querySelectorAll('li').length === 0) {
+        document.getElementById('tasks-completed').style.display = 'none';
+    }
+
+    if (document.getElementById('tasks-pending-ul').querySelectorAll('li').length === 0) {
+        document.getElementById('tasks-pending').style.display = 'none';
+    }
+    
     tasks.forEach(task => {
         const checkbox = task.querySelector('.task-checkbox');
 
         task.addEventListener('click', function (event) {
-            if (event.target !== checkbox) {
+            if (checkbox !== null & event.target !== checkbox) {
                 checkbox.checked = !checkbox.checked;
             }
         });
@@ -237,4 +245,4 @@ btnSearch.addEventListener('click', () => {
 
 });
 
-//TODO: si no hay tareas completadas o pendientes, ocultar divs 
+ 

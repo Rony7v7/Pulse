@@ -1,38 +1,40 @@
 <%- include('contextMenu') %>
-<h4>Pendientes</h4>
-<ul class="tasks-list">
-    <% tasksPending.forEach(task=> {%>
-        <li class="task" id="<%= task.id %>">
-            <div class="task-header">
-                <input type="checkbox" class="task-checkbox" id="<%= task.id %>">
-                <label ><%= task.title %></label>
-                <div class="text-body-secondary"><%= task.dueDateView %> | <%= task.dueDate %></div>
-            </div>
-            <div class="task-content">
-                <div class="text-body-secondary"><%= task.description %></div>
-            </div>
-            <div class="priority-circle <%= task.priority %>"></div>
-        </li>
-    <% }); %>
-</ul>
-
-<% if(tasksCompleted.lenght !== 0) {%>
-<div class="d-flex ">
-    <h4>Completadas</h4>
-    <button id="btnDeleteCompleteTasks">DEL</button>
+<div class="w-100 tasks-pending-section empty" id="tasks-pending">
+    <h4>Pendientes</h4>
+    <ul class="tasks-list" id="tasks-pending-ul">
+        <% tasksPending.forEach(task=> {%>
+            <li class="task" id="<%= task.id %>">
+                <div class="task-header">
+                    <input type="checkbox" class="task-checkbox" id="<%= task.id %>">
+                    <span ><%= task.title %></span>
+                    <div class="text-body-secondary"><%= task.dueDateView %> | <%= task.dueDate %></div>
+                </div>
+                <div class="task-content">
+                    <div class="text-body-secondary"><%= task.description %></div>
+                </div>
+                <div class="priority-circle <%= task.priority %>"></div>
+            </li>
+        <% }); %>
+    </ul>
 </div>
-<% } %>
-<ul class="tasks-list task-list-completed">
-    <% tasksCompleted.forEach(task=> {%>
-        <li class="task" id="<%= task.id %>">
-            <div class="task-header">
-                <label><%= task.title %></label>
-                <div class="text-body-secondary">Completada | <%= task.dueDate %></div>
-            </div>
-            <div class="task-content">
-                <div class="text-body-secondary"><%= task.description %></div>
-            </div>
-            <div class="priority-circle"></div>
-        </li>
-    <% }); %>
-</ul>
+
+<div class="w-100 tasks-completed-section empty" id="tasks-completed">
+    <div class="d-flex ">
+        <h4>Completadas</h4>
+        <button id="btnDeleteCompleteTasks">Vaciar</button>
+    </div>
+    <ul class="tasks-list task-list-completed" id="tasks-completed-ul">
+        <% tasksCompleted.forEach(task=> {%>
+            <li class="task" id="<%= task.id %>">
+                <div class="task-header">
+                    <span><%= task.title %></span>
+                    <div class="text-body-secondary">Completada | <%= task.dueDate %></div>
+                </div>
+                <div class="task-content">
+                    <div class="text-body-secondary"><%= task.description %></div>
+                </div>
+                <div class="priority-circle"></div>
+            </li>
+        <% }); %>
+    </ul>
+</div>
