@@ -34,8 +34,8 @@ router.get('/search-tasks', (req, res) => {
     const daysLeft = req.query.daysLeft;
     const category = req.query.category;
     const tasks = taskManager.filterTasks(title, status, priority, daysLeft, category);
-    console.log(tasks);
     res.json(tasks);
+    console.log(tasks);
 });
 
 router.post('/add-task', (req, res) => { 

@@ -5,6 +5,11 @@ class TaskManager {
         this.filePATH = `./src/data/${this.userID}.json`;
         this.tasks = [];
         this.loadTasks();
+        // Esperar a que se carguen las tareas
+        this.tasksView = [];
+        setTimeout(() => {
+            this.tasksView = this.tasks;
+        }, 50);
     }
 
     async loadTasks() {
@@ -41,8 +46,8 @@ class TaskManager {
         this.sortTasksBy('dueDate');
         this.saveTasks();
 
-        let tasksPending = this.tasks.filter((task) => !task.isCompleted);
-        let tasksCompleted = this.tasks.filter((task) => task.isCompleted);
+        let tasksPending = this.tasksView.filter((task) => !task.isCompleted);
+        let tasksCompleted = this.tasksView.filter((task) => task.isCompleted);
 
         return [tasksPending, tasksCompleted];
     }
@@ -84,29 +89,29 @@ class TaskManager {
     }
 
     filterTasks(title, status, priority, daysLeft, category) {
-        let tasks = this.tasks;
+        this.tasksView = this.tasks;
 
-        if (title !== '') {
-            tasks = this.filterTasksBy(tasks, 'title', title);
+        if (title !== '' && this.tasksView.length !== 0) {
+            this.tasksView = this.filterTasksBy(this.tasksView, 'title', title);
         }
 
-        if (status !== '') {
-            tasks = this.filterTasksBy(tasks, 'isCompleted', status);
+        if (status !== 'all' && this.tasksView.length !== 0) {
+            this.tasksView = this.filterTasksBy(this.tasksView, 'isCompleted', status === 'true' ? true : false);
         }
 
-        if (priority !== '') {
-            tasks = this.filterTasksBy(tasks, 'priority', priority);
+        if (priority !== 'all' && this.tasksView.length !== 0) {
+            this.tasksView = this.filterTasksBy(this.tasksView, 'priority', priority);
         }
 
-        if (daysLeft !== '') {
-            tasks = this.filterTasksBy(tasks, 'daysLeft', daysLeft);
+        if (daysLeft !== '' && this.tasksView.length !== 0) {
+            this.tasksView = this.filterTasksBy(this.tasksView, 'daysLeft', daysLeft);
         }
 
-        if (category !== '') {
-            tasks = this.filterTasksBy(tasks, 'category', category);
+        if (category !== '' && this.tasksView.length !== 0) {
+            this.tasksView = this.filterTasksBy(this.tasksView, 'category', category);
         }
 
-        return [tasks.filter((task) => !task.isCompleted), tasks.filter((task) => task.isCompleted)];
+        return [this.tasksView.filter((task) => !task.isCompleted), this.tasksView.filter((task) => task.isCompleted)];
     }
 
     getDate() { // Retorna un array con la hora actual (hh:mm), el formato (pm o am) y la fecha (<DIA>, <dia> de <MES> )

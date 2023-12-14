@@ -194,10 +194,6 @@ btnSearch.addEventListener('click', () => {
     let daysLeft = document.getElementById('daysLeft-search').value;
     const category = document.getElementById('category-search').value;
 
-    if (title === '' && status === '' && priority === '' && dueDate === '' && daysLeft === '' && category === '') {
-        return;
-    }
-
     let today = new Date();
     switch (dateRange) {
         case 'today':
@@ -221,7 +217,7 @@ btnSearch.addEventListener('click', () => {
             status = false;
             break;
         default:
-            status = '';
+            status = 'all';
             break;
     }
 
@@ -237,6 +233,7 @@ btnSearch.addEventListener('click', () => {
     fetch(`/search-tasks?${params}`)
     .then((res) => {console.log(res.json.toString);})
     
+    window.location.href = `/`;
 
 });
 
