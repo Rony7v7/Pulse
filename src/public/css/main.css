@@ -15,10 +15,6 @@
     font-weight: lighter;
 }
 
-footer {
-    color: white;
-}
-
 body {
     /* importar background svg */
     background-image: url("/svg/bg-white-01.PNG");
@@ -29,12 +25,26 @@ body {
 
     /* importar font */
     font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
     /* Sin scrollbar */
     overflow: inherit;
 }
 
+main {
+    padding: 0;
+}
+
+footer {
+    color: white;
+}
+
 h1 {
     font-family: 'Quicksand Bold', sans-serif;
+    font-size: 28.5px;
+}
+
+h4 {
+    font-size: 16.5px;
 }
 
 dialog {
@@ -57,17 +67,17 @@ dialog {
 }
 
 .time {
-    font-size: 165px;
+    font-size: 125px;
     font-weight: bold;
 }
 
 .time-abr {
     padding-bottom: 40px;
-    font-size: 50px;
+    font-size:37.5px;
 }
 
 .date {
-    font-size: 30px;
+    font-size:22.5px;
 }
 
 .tasks-section {
@@ -188,7 +198,7 @@ dialog {
     background: rgba(255, 255, 255, 0.5);
     color: #343a40;
     font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
+    font-size: 11.25px;
     border: none;
     outline: none;
 }
@@ -196,7 +206,7 @@ dialog {
 .task-form input::placeholder {
     color: #343a40;
     font-family: 'Quicksand Light', sans-serif;
-    font-size: 15px;
+    font-size: 11.25px;
 }
 
 .task-form-date {
@@ -208,7 +218,7 @@ dialog {
     background: rgba(255, 255, 255, 0.5);
     color: #343a40;
     font-family: 'Quicksand Light', sans-serif;
-    font-size: 15px;
+    font-size: 11.25px;
     border: none;
     outline: none;
 }
@@ -226,7 +236,7 @@ dialog {
     background: rgba(255, 255, 255, 0.5);
     color: #343a40;
     font-family: 'Quicksand Light', sans-serif;
-    font-size: 15px;
+    font-size: 11.25px;
     border: none;
     outline: none;
 }
@@ -262,7 +272,7 @@ dialog {
 
 .cm-content .cm-item {
     list-style: none;
-    font-size: 15px;
+    font-size: 11.25px;
     display: flex;
     cursor: pointer;
     padding: 0 5px 0 10px;
