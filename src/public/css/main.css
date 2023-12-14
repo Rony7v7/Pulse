@@ -1,17 +1,17 @@
 @font-face {
     font-family: 'QuickSand';
-    src: url( '/fonts/Quicksand_Book.otf' );
+    src: url('/fonts/Quicksand_Book.otf');
 }
 
 @font-face {
     font-family: 'QuickSand Bold';
-    src: url( '/fonts/Quicksand_Bold.otf' );
+    src: url('/fonts/Quicksand_Bold.otf');
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'QuickSand Light';
-    src: url( '/fonts/Quicksand_Light.otf' );
+    src: url('/fonts/Quicksand_Light.otf');
     font-weight: lighter;
 }
 
@@ -29,10 +29,8 @@ body {
 
     /* importar font */
     font-family: 'Quicksand', sans-serif;
-
     /* Sin scrollbar */
     overflow: inherit;
-
 }
 
 h1 {
@@ -42,70 +40,47 @@ h1 {
 dialog {
     background-color: transparent;
     border: none;
-
 }
 
 ::-webkit-scrollbar {
     width: 1px;
 }
 
-.time { /* Hora principal en pantalla */
-    margin: 0px;
-    padding: 0px;
-
-    /* Fancy font */
+.time,
+.time-abr,
+.date {
+    margin: 0;
+    padding: 0;
     font-family: 'Quicksand', sans-serif;
-
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+    color: white;
+}
 
+.time {
     font-size: 165px;
     font-weight: bold;
-    color: white;
-
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
 }
 
 .time-abr {
-    margin: 0px;
-    padding: 0px;
     padding-bottom: 40px;
-
     font-size: 50px;
-    font-weight: bold;
-    color: white;
-
-    font-family: 'Quicksand', sans-serif;
-
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
-
 }
 
-.date { /* Fecha principal en pantalla */
-    margin: 0px;
-    padding: 0px;
-
+.date {
     font-size: 30px;
-    font-weight: bold;
-    color: white;
-
-    font-family: 'Quicksand', sans-serif;
-
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
 }
 
 .tasks-section {
     width: 50%;
     height: 90%;
     padding: 25px;
-    margin: 0px;
-
-    background: rgba( 255, 255, 255, 0.1 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.4 );
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 15px );
+    margin: 0;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 20px;
-    border: 1px solid rgba( 255, 255, 255, 0.2 );
-
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
 }
 
@@ -122,18 +97,16 @@ dialog {
 
 .tasks-list::-webkit-scrollbar-thumb {
     border-radius: 6px;
-
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 15px );
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 .tasks-list::-webkit-scrollbar-track {
     border-radius: 6px;
-
     background-color: #f1f1f148;
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 15px ); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 .tasks-list-completed {
@@ -145,30 +118,25 @@ dialog {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-
-    margin: 0px;
-    padding: 0px;
-
+    margin: 0;
+    padding: 0;
     max-height: 85%;
     width: 100%;
 }
 
-.task { 
+.task {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     margin: 10px;
     border-radius: 20px;
-
-    background: rgba( 255, 255, 255, 0.25 );
-
+    background: rgba(255, 255, 255, 0.25);
     user-select: none;
 }
 
-/* task hoover */
 .task:hover {
-    background: rgba( 255, 255, 255, 0.5 );
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .task-checkbox {
@@ -180,10 +148,9 @@ dialog {
     height: 20px;
     border-radius: 50%;
     margin-right: 10px;
-
-    box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 10px );
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .priority-1 {
@@ -200,17 +167,14 @@ dialog {
 
 .task-form {
     width: 100%;
-
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
     border-radius: 20px;
-
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 25px );
-    -webkit-backdrop-filter: blur( 25px ); 
-
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     user-select: none;
 }
 
@@ -221,13 +185,10 @@ dialog {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
-
-    background: rgba( 255, 255, 255, 0.5 );
-
+    background: rgba(255, 255, 255, 0.5);
     color: #343a40;
     font-family: 'Quicksand', sans-serif;
     font-size: 15px;
-
     border: none;
     outline: none;
 }
@@ -244,13 +205,10 @@ dialog {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
-
-    background: rgba( 255, 255, 255, 0.5 );
-
+    background: rgba(255, 255, 255, 0.5);
     color: #343a40;
     font-family: 'Quicksand Light', sans-serif;
     font-size: 15px;
-
     border: none;
     outline: none;
 }
@@ -265,22 +223,17 @@ dialog {
     padding: 10px;
     margin: 20px;
     border-radius: 20px;
-
-    background: rgba( 255, 255, 255, 0.5 );
-
+    background: rgba(255, 255, 255, 0.5);
     color: #343a40;
     font-family: 'Quicksand Light', sans-serif;
     font-size: 15px;
-
     border: none;
     outline: none;
 }
 
 .task-form-priority {
-    /* Clase para la etiqueta select */
     width: 100%;
     height: 100%;
-    
     border-radius: 20px;
 }
 
@@ -289,8 +242,7 @@ dialog {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    margin: 0px;
+    margin: 0;
 }
 
 .cm-wrapper {
@@ -298,15 +250,14 @@ dialog {
     display: none;
     position: absolute;
     width: auto;
-
-    background: rgba( 255, 255, 255, 0.75 );
+    background: rgba(255, 255, 255, 0.75);
     color: black;
     border-radius: 10px;
 }
 
 .cm-wrapper .cm-menu {
     padding: 10px 12px;
-    margin: 0px;
+    margin: 0;
 }
 
 .cm-content .cm-item {
@@ -320,7 +271,7 @@ dialog {
 }
 
 .cm-content .cm-item:hover {
-    background: rgba( 255, 255, 255, 0.5 );
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .disabled {
