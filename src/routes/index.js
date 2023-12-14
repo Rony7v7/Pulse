@@ -26,6 +26,18 @@ router.get('/get-task', (req, res) => {
     res.json(task);
 });
 
+router.get('/search-tasks', (req, res) => {
+    console.log(req.query);
+    const title = req.query.title;
+    const status = req.query.status;
+    const priority = req.query.priority;
+    const daysLeft = req.query.daysLeft;
+    const category = req.query.category;
+    const tasks = taskManager.filterTasks(title, status, priority, daysLeft, category);
+    console.log(tasks);
+    res.json(tasks);
+});
+
 router.post('/add-task', (req, res) => { 
     const newTask = new Task(req.body.title, req.body.description, req.body.dueDate, req.body.priority, req.body.category);
     taskManager.addTask(newTask);

@@ -1,9 +1,15 @@
 const btnAddTask = document.getElementById('btnAddTask');
 const btnCheckTask = document.getElementById('btnCheckTask');
 const btnDeleteCompleteTasks = document.getElementById('btnDeleteCompleteTasks');
+
 const contextmenu = document.querySelector('.cm-wrapper');
 const btnDeleteTask = document.getElementById('btnDeleteTask');
 const btnEditTask = document.getElementById('btnEditTask');
+
+const btnOptions = document.getElementById('btnOptions');
+
+// Search bar
+const btnSearch = document.getElementById('btnSearch');
 
 const tasks = document.querySelectorAll('.task');
 let currentTaskId = null;
@@ -173,3 +179,65 @@ btnEditTask.addEventListener('click', () => {
         });
     });
 });
+
+btnOptions.addEventListener('click', () => {
+    const searchBar = document.getElementById('search-bar');
+    searchBar.hidden = !searchBar.hidden;
+});
+
+btnSearch.addEventListener('click', () => {
+
+    const title = document.getElementById('title-search').value;
+    let status = document.getElementById('status-search').value;
+    const priority = document.getElementById('priority-search').value;
+    const dateRange = document.getElementById('date-search').value;
+    let daysLeft = document.getElementById('daysLeft-search').value;
+    const category = document.getElementById('category-search').value;
+
+    if (title === '' && status === '' && priority === '' && dueDate === '' && daysLeft === '' && category === '') {
+        return;
+    }
+
+    let today = new Date();
+    switch (dateRange) {
+        case 'today':
+            daysLeft = 0;
+            break;
+        case 'week':
+            daysLeft = 7 - today.getDay();
+            break;
+        case 'month':
+            daysLeft = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate() - today.getDate();
+            break;
+        default:
+            break;
+    }
+
+    switch (status) {
+        case 'completed':
+            status = true;
+            break;
+        case 'pending':
+            status = false;
+            break;
+        default:
+            status = '';
+            break;
+    }
+
+
+    const params = new URLSearchParams({
+        title,
+        status,
+        priority,
+        daysLeft,
+        category
+    });
+
+    fetch(`/search-tasks?${params}`)
+    .then((res) => {console.log(res.json.toString);})
+    
+
+});
+
+//TODO: si no hay tareas completadas o pendientes, ocultar divs 

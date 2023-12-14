@@ -7,7 +7,8 @@
     "priority": "priority-1",
     "isCompleted": false,
     "category": "trabajo",
-    "dueDateView": "Mañana"
+    "dueDateView": "Mañana",
+    "daysLeft": "1"
   },
   {
     "id": "Tarea 21702513030110",
@@ -17,7 +18,8 @@
     "priority": "priority-2",
     "isCompleted": false,
     "category": "trabajo",
-    "dueDateView": "En 2 días"
+    "dueDateView": "En 2 días",
+    "daysLeft": "2"
   },
   {
     "id": "Tarea 31702513030110",
@@ -27,7 +29,8 @@
     "priority": "priority-3",
     "isCompleted": false,
     "category": "trabajo",
-    "dueDateView": "En 3 días"
+    "dueDateView": "En 3 días",
+    "daysLeft": "3"
   },
   {
     "id": "Tarea 41702513030110",
@@ -37,7 +40,8 @@
     "priority": "priority-1",
     "isCompleted": false,
     "category": "estudio",
-    "dueDateView": "En 4 días"
+    "dueDateView": "En 4 días",
+    "daysLeft": "4"
   },
   {
     "id": "Tarea 51702513030110",
@@ -47,7 +51,8 @@
     "priority": "priority-2",
     "isCompleted": false,
     "category": "estudio",
-    "dueDateView": "En 5 días"
+    "dueDateView": "En 5 días",
+    "daysLeft": "3"
   },
   {
     "id": "Tarea 61702513030110",
@@ -57,6 +62,7 @@
     "priority": "priority-3",
     "isCompleted": false,
     "category": "estudio",
-    "dueDateView": "En 6 días"
+    "dueDateView": "En 6 días",
+    "daysLeft": "3"
   }
 ]

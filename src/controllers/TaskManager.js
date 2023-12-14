@@ -61,6 +61,54 @@ class TaskManager {
         });
     }
 
+    filterTasksBy(tasks, field, value) {
+        
+        if (tasks.length === 0) return;
+
+        if (field === 'title') {
+            return tasks.filter((task) => task[field].toLowerCase().includes(value.toLowerCase()));
+        }
+
+        if (field === 'dueDate' || field === 'priority' || field === 'category') {
+            return tasks.filter((task) => task[field] === value);
+        }
+
+        if (field === 'isCompleted') {
+            return tasks.filter((task) => task[field] === value);
+        }
+
+        if (field === 'daysLeft') { //TODO: Hacer que las tareas manejen el tiempo restante
+            return tasks.filter((task) => task[field] <= value);
+        }
+
+    }
+
+    filterTasks(title, status, priority, daysLeft, category) {
+        let tasks = this.tasks;
+
+        if (title !== '') {
+            tasks = this.filterTasksBy(tasks, 'title', title);
+        }
+
+        if (status !== '') {
+            tasks = this.filterTasksBy(tasks, 'isCompleted', status);
+        }
+
+        if (priority !== '') {
+            tasks = this.filterTasksBy(tasks, 'priority', priority);
+        }
+
+        if (daysLeft !== '') {
+            tasks = this.filterTasksBy(tasks, 'daysLeft', daysLeft);
+        }
+
+        if (category !== '') {
+            tasks = this.filterTasksBy(tasks, 'category', category);
+        }
+
+        return [tasks.filter((task) => !task.isCompleted), tasks.filter((task) => task.isCompleted)];
+    }
+
     getDate() { // Retorna un array con la hora actual (hh:mm), el formato (pm o am) y la fecha (<DIA>, <dia> de <MES> )
         const date = new Date();
 

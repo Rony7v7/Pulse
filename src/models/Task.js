@@ -8,6 +8,7 @@ class Task {
         this.isCompleted = false;
         this.category = category;
         this.dueDateView = '';
+        this.daysLeft = 0;
         
         this.setDueDateView();
     }
@@ -39,9 +40,9 @@ class Task {
         const dueDate = new Date(this.dueDate);
         
         const diffTime = dueDate - today;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        this.daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-        switch (diffDays) {
+        switch (this.daysLeft) {
             case 0:
                 this.dueDateView = 'Hoy';
                 break;
@@ -49,7 +50,7 @@ class Task {
                 this.dueDateView = 'Mañana';
                 break;
             default:
-                this.dueDateView = `En ${diffDays} días`;
+                this.dueDateView = `En ${this.daysLeft} días`;
                 break;
         }
     }
