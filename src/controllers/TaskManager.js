@@ -32,10 +32,12 @@ class TaskManager {
 
     addTask(task) {
         this.tasks.push(task);
+        this.tasksView = this.tasks;
     }
 
     deleteTask(id) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
+        this.tasksView = this.tasks;
     }
 
     getTask(id) {
@@ -45,7 +47,7 @@ class TaskManager {
     renderTasks() {
         this.sortTasksBy('dueDate');
         this.saveTasks();
-
+        
         let tasksPending = this.tasksView.filter((task) => !task.isCompleted);
         let tasksCompleted = this.tasksView.filter((task) => task.isCompleted);
 
@@ -146,10 +148,12 @@ class TaskManager {
             const task = this.getTask(id);
             task.isCompleted = true;
         });
+        this.tasksView = this.tasks;
     }
 
     deleteCompleteTasks() {
         this.tasks = this.tasks.filter((task) => !task.isCompleted);
+        this.tasksView = this.tasks;
     }
 
 }

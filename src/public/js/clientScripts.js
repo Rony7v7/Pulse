@@ -241,7 +241,7 @@ btnSearch.addEventListener('click', () => {
     fetch(`/search-tasks?${params}`)
     .then((res) => {console.log(res.json.toString);})
     
-    window.location.href = `/`;
+    window.location.reload();
 
 });
 

@@ -52,7 +52,7 @@
     "isCompleted": false,
     "category": "estudio",
     "dueDateView": "En 5 días",
-    "daysLeft": "3"
+    "daysLeft": "5"
   },
   {
     "id": "Tarea 61702513030110",
@@ -63,6 +63,6 @@
     "isCompleted": false,
     "category": "estudio",
     "dueDateView": "En 6 días",
-    "daysLeft": "3"
+    "daysLeft": "6"
   }
 ]
