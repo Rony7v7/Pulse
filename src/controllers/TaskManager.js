@@ -1,6 +1,5 @@
-import Task from '../models/Task.js';
 import { promises as fs } from 'fs';
-class TaskManager { //clase para manejar las tareas
+class TaskManager {
     constructor(userID) {
         this.userID = userID;
         this.filePATH = `./src/data/${this.userID}.json`;
@@ -41,9 +40,9 @@ class TaskManager { //clase para manejar las tareas
     renderTasks() {
         this.sortTasksBy('dueDate');
         this.saveTasks();
-        
+
         let tasksPending = this.tasks.filter((task) => !task.isCompleted);
-        let tasksCompleted = this.tasks.filter((task) => task.isCompleted); 
+        let tasksCompleted = this.tasks.filter((task) => task.isCompleted);
 
         return [tasksPending, tasksCompleted];
     }
