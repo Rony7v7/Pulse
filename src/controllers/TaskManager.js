@@ -32,40 +32,41 @@ class TaskManager {
 
     addTask(task) {
         this.tasks.push(task);
-        this.tasksView = this.tasks;
     }
 
     deleteTask(id) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
-        this.tasksView = this.tasks;
     }
 
     getTask(id) {
         return this.tasks.find((task) => task.id === id);
     }
 
-    renderTasks() {
+    renderTasks(isFiltering = false) {
         this.sortTasksBy('dueDate');
         this.saveTasks();
-        
-        let tasksPending = this.tasksView.filter((task) => !task.isCompleted);
-        let tasksCompleted = this.tasksView.filter((task) => task.isCompleted);
+
+        let allTasks = this.tasks;
+
+        if (isFiltering) {
+            console.log('isFiltering');
+            allTasks = this.tasksView;
+        }
+
+        let tasksPending = allTasks.filter((task) => !task.isCompleted);
+        let tasksCompleted = allTasks.filter((task) => task.isCompleted);
+
+        allTasks = this.tasks;
 
         return [tasksPending, tasksCompleted];
     }
 
     sortTasksBy(field) {
-        if (this.tasks.length === 0) return;
-
-        this.tasks.sort((a, b) => {
-            if (a[field] < b[field]) {
-                return -1;
-            }
-            if (a[field] > b[field]) {
-                return 1;
-            }
-            return 0;
-        });
+        if (field === 'dueDate') {
+            this.tasks.sort((a, b) => {
+                return new Date(a[field]) - new Date(b[field]);
+            });
+        }
     }
 
     filterTasksBy(tasks, field, value) {
@@ -84,7 +85,7 @@ class TaskManager {
             return tasks.filter((task) => task[field] === value);
         }
 
-        if (field === 'daysLeft') { //TODO: Hacer que las tareas manejen el tiempo restante
+        if (field === 'daysLeft') {
             return tasks.filter((task) => task[field] <= value);
         }
 
@@ -148,12 +149,10 @@ class TaskManager {
             const task = this.getTask(id);
             task.isCompleted = true;
         });
-        this.tasksView = this.tasks;
     }
 
     deleteCompleteTasks() {
         this.tasks = this.tasks.filter((task) => !task.isCompleted);
-        this.tasksView = this.tasks;
     }
 
 }

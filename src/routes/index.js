@@ -6,13 +6,16 @@ const router = Router();
 
 const taskManager = new TaskManager('rony');
 
+let tasksFiltered = false;
+
 router.get('/', (req, res) => { 
-    let tasks = taskManager.renderTasks();
+    let tasks = taskManager.renderTasks(tasksFiltered);
     res.render('index',{
         username: 'Rony', 
         tasksPending: tasks[0],
         tasksCompleted: tasks[1],
-        date: taskManager.getDate()}) 
+        date: taskManager.getDate()});
+    tasksFiltered = false; 
 });
 
 router.get('/about', (req, res) => { res.render('index') });
@@ -33,6 +36,7 @@ router.get('/search-tasks', (req, res) => {
     const daysLeft = req.query.daysLeft;
     const category = req.query.category;
     const tasks = taskManager.filterTasks(title, status, priority, daysLeft, category);
+    tasksFiltered = true;
     res.json(tasks);
 });
 
