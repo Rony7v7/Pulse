@@ -19,7 +19,6 @@ class TaskManager {
             this.tasks = JSON.parse(data);
             this.updateDataToTasks();
 
-            console.log('\nTareas cargadas\n');
         } catch (error) {
             console.log(error);
         }
@@ -28,7 +27,6 @@ class TaskManager {
     async saveTasks() {
         try {
             await fs.writeFile(this.filePATH, JSON.stringify(this.tasks, null, 2));
-            console.log('\nTareas guardadas\n');
         } catch (error) {
             console.error(error);
         }
