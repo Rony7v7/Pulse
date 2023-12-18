@@ -19,12 +19,6 @@ router.get('/', (req, res) => {
     tasksFiltered = false; 
 });
 
-router.get('/about', (req, res) => { res.render('index') });
-
-router.get('/contact', (req, res) => { res.render('index') });
-
-router.get('/login', (req, res) => { res.render('login') });
-
 router.get('/get-task', (req, res) => {
     const task = taskManager.getTask(req.query.id);
     res.json(task);
