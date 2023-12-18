@@ -1,17 +1,18 @@
 import { Router } from 'express';
 import TaskManager from '../controllers/TaskManager.js'
-import Task from '../models/Task.js';
 
 const router = Router();
 
-const taskManager = new TaskManager('rony');
+const username = 'test';
+
+const taskManager = new TaskManager(username);
 
 let tasksFiltered = false;
 
 router.get('/', (req, res) => { 
     let tasks = taskManager.renderTasks(tasksFiltered);
     res.render('index',{
-        username: 'Rony', 
+        username: username, 
         tasksPending: tasks[0],
         tasksCompleted: tasks[1],
         date: taskManager.getDate()});

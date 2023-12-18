@@ -5,21 +5,21 @@ class TaskManager {
         this.userID = userID;
         this.filePATH = `./src/data/${this.userID}.json`;
         this.tasks = [];
-        this.loadTasks();
-        // Esperar a que se carguen las tareas
         this.tasksView = [];
-        setTimeout(() => {
-            this.tasksView = this.tasks;
-        }, 50);
+
+        this.loadTasks();
     }
 
     async loadTasks() {
         try {
             const data = await fs.readFile(this.filePATH, 'utf8');
-            if (data === '') return;
-            this.tasks = JSON.parse(data);
 
+            if (data === '') return;
+
+            this.tasks = JSON.parse(data);
             this.updateDataToTasks();
+
+            console.log('\nTareas cargadas\n');
         } catch (error) {
             console.log(error);
         }
@@ -28,6 +28,7 @@ class TaskManager {
     async saveTasks() {
         try {
             await fs.writeFile(this.filePATH, JSON.stringify(this.tasks, null, 2));
+            console.log('\nTareas guardadas\n');
         } catch (error) {
             console.error(error);
         }
@@ -52,7 +53,6 @@ class TaskManager {
         let allTasks = this.tasks;
 
         if (isFiltering) {
-            console.log('isFiltering');
             allTasks = this.tasksView;
         }
 
@@ -159,12 +159,11 @@ class TaskManager {
     }
 
     updateDataToTasks() {
+        let aux = [];
         this.tasks.forEach((task) => {
-
-            if (!task instanceof Task) return;
-            const data = this.tasks.shift();
-            this.tasks.push(new Task(data.title, data.description, data.dueDate, data.priority, data.category));
+            aux.push(new Task(task.id, task.title, task.description, task.dueDate, task.priority, task.category, task.isCompleted, task.id));
         });
+        this.tasks = aux;
     }
 
 }

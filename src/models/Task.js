@@ -1,6 +1,6 @@
 class Task {
-    constructor(title, description, dueDate, priority, category) {
-        this.id = title+Date.now();
+    constructor(id = Date.now() ,title, description, dueDate, priority, category) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
