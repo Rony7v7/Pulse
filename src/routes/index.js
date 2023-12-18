@@ -41,8 +41,7 @@ router.get('/search-tasks', (req, res) => {
 });
 
 router.post('/add-task', (req, res) => { 
-    const newTask = new Task(req.body.title, req.body.description, req.body.dueDate, req.body.priority, req.body.category);
-    taskManager.addTask(newTask);
+    taskManager.addTask(req.body.title, req.body.description, req.body.dueDate, req.body.priority, req.body.category);
     res.redirect('/');
 })
 

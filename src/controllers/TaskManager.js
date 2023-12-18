@@ -1,4 +1,5 @@
 import { promises as fs } from 'fs';
+import Task from '../models/Task.js';
 class TaskManager {
     constructor(userID) {
         this.userID = userID;
@@ -17,6 +18,8 @@ class TaskManager {
             const data = await fs.readFile(this.filePATH, 'utf8');
             if (data === '') return;
             this.tasks = JSON.parse(data);
+
+            this.updateDataToTasks();
         } catch (error) {
             console.log(error);
         }
@@ -30,8 +33,8 @@ class TaskManager {
         }
     }
 
-    addTask(task) {
-        this.tasks.push(task);
+    addTask(title, description, dueDate, priority, category) {
+        this.tasks.push(new Task(title, description, dueDate, priority, category));
     }
 
     deleteTask(id) {
@@ -153,6 +156,15 @@ class TaskManager {
 
     deleteCompleteTasks() {
         this.tasks = this.tasks.filter((task) => !task.isCompleted);
+    }
+
+    updateDataToTasks() {
+        this.tasks.forEach((task) => {
+
+            if (!task instanceof Task) return;
+            const data = this.tasks.shift();
+            this.tasks.push(new Task(data.title, data.description, data.dueDate, data.priority, data.category));
+        });
     }
 
 }
