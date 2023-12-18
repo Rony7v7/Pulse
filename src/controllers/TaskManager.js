@@ -11,6 +11,7 @@ class TaskManager {
     }
 
     async loadTasks() {
+
         try {
             const data = await fs.readFile(this.filePATH, 'utf8');
 
@@ -22,14 +23,12 @@ class TaskManager {
         } catch (error) {
             console.log(error);
         }
+
     }
 
     async saveTasks() {
-        try {
-            await fs.writeFile(this.filePATH, JSON.stringify(this.tasks, null, 2));
-        } catch (error) {
-            console.error(error);
-        }
+        let tasksToString = JSON.stringify(this.tasks, null, 2);
+        await fs.writeFile(this.filePATH, tasksToString, 'utf8');
     }
 
     addTask(title, description, dueDate, priority, category) {
@@ -46,7 +45,6 @@ class TaskManager {
 
     renderTasks(isFiltering = false) {
         this.sortTasksBy('dueDate');
-        this.saveTasks();
 
         let allTasks = this.tasks;
 
@@ -56,8 +54,6 @@ class TaskManager {
 
         let tasksPending = allTasks.filter((task) => !task.isCompleted);
         let tasksCompleted = allTasks.filter((task) => task.isCompleted);
-
-        allTasks = this.tasks;
 
         return [tasksPending, tasksCompleted];
     }
@@ -150,6 +146,7 @@ class TaskManager {
             const task = this.getTask(id);
             task.isCompleted = true;
         });
+        this.saveTasks();
     }
 
     deleteCompleteTasks() {
@@ -157,11 +154,9 @@ class TaskManager {
     }
 
     updateDataToTasks() {
-        let aux = [];
-        this.tasks.forEach((task) => {
-            aux.push(new Task(task.id, task.title, task.description, task.dueDate, task.priority, task.category, task.isCompleted, task.id));
+        this.tasks.forEach((task, index) => {
+            this.tasks[index] = new Task(task.id, task.title, task.description, task.dueDate, task.priority, task.isCompleted, task.category);
         });
-        this.tasks = aux;
     }
 
 }

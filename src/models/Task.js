@@ -1,11 +1,11 @@
 class Task {
-    constructor(id = Date.now() ,title, description, dueDate, priority, category) {
+    constructor(id = Date.now() ,title, description, dueDate, priority, isCompleted = false, category) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.isCompleted = false;
+        this.isCompleted = isCompleted;
         this.category = category;
         this.dueDateView = '';
         this.daysLeft = 0;
