@@ -155,7 +155,7 @@ class TaskManager {
 
     updateDataToTasks() {
         this.tasks.forEach((task, index) => {
-            this.tasks[index] = new Task(task.id, task.title, task.description, task.dueDate, task.priority, task.isCompleted, task.category);
+            this.tasks[index] = new Task(task.title, task.description, task.dueDate, task.priority, task.category,task.id, task.isCompleted);
         });
     }
 
