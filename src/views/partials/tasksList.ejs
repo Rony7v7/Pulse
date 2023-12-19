@@ -39,7 +39,8 @@
         <li class="task" id="<%= task.id %>">
             <div class="task-header">
                 <span><%= task.title %></span>
-                <div class="text-body-secondary">Completada | <%= task.dueDate %></div>
+                <div class="task-info text-body-secondary"><%= task.dueDate %> | <%= task.category %></div>
+                <div class="task-due-date" hidden >Completada</div>                
             </div>
             <div class="task-content">
                 <div class="text-body-secondary">
