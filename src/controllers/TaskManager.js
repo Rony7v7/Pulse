@@ -33,10 +33,12 @@ class TaskManager {
 
     addTask(title, description, dueDate, priority, category) {
         this.tasks.push(new Task(title, description, dueDate, priority, category));
+        this.saveTasks();
     }
 
     deleteTask(id) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
+        this.saveTasks();
     }
 
     getTask(id) {
@@ -151,6 +153,7 @@ class TaskManager {
 
     deleteCompleteTasks() {
         this.tasks = this.tasks.filter((task) => !task.isCompleted);
+        this.saveTasks();
     }
 
     updateDataToTasks() {
