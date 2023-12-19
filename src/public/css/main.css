@@ -340,3 +340,9 @@ i {
     border: none;
     outline: none;
 }
+
+/* Icono de la pagina */
+.pulse-icon {
+    font-size: 20px;
+    margin-right: 8px;  
+}
