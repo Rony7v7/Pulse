@@ -1,38 +1,5 @@
 [
   {
-    "id": "11702928192273",
-    "title": "Tarea 1",
-    "description": "Descripcion 1",
-    "dueDate": "2023-12-19",
-    "priority": "priority-1",
-    "isCompleted": false,
-    "category": "Categoria 1",
-    "dueDateView": "Mañana",
-    "daysLeft": 1
-  },
-  {
-    "id": "21702928192273",
-    "title": "Tarea 2",
-    "description": "Descripcion 2",
-    "dueDate": "2023-12-20",
-    "priority": "priority-2",
-    "isCompleted": false,
-    "category": "Categoria 2",
-    "dueDateView": "En 2 días",
-    "daysLeft": 2
-  },
-  {
-    "id": "31702928192273",
-    "title": "Tarea 3",
-    "description": "Descripcion 3",
-    "dueDate": "2023-12-21",
-    "priority": "priority-3",
-    "isCompleted": false,
-    "category": "Categoria 3",
-    "dueDateView": "En 3 días",
-    "daysLeft": 3
-  },
-  {
     "id": "41702928192273",
     "title": "Tarea 4",
     "description": "Descripcion 4",
@@ -40,8 +7,8 @@
     "priority": "priority-1",
     "isCompleted": false,
     "category": "Categoria 4",
-    "dueDateView": "En 4 días",
-    "daysLeft": 4
+    "dueDateView": "En 3 días",
+    "daysLeft": 3
   },
   {
     "id": "51702928192273",
@@ -51,18 +18,29 @@
     "priority": "priority-2",
     "isCompleted": false,
     "category": "Categoria 5",
+    "dueDateView": "En 4 días",
+    "daysLeft": 4
+  },
+  {
+    "id": "61702928192273",
+    "title": "Nueva Tarea",
+    "description": "Descripcion 6",
+    "dueDate": "2023-12-24",
+    "priority": "priority-2",
+    "isCompleted": false,
+    "category": "Categoria 6",
     "dueDateView": "En 5 días",
     "daysLeft": 5
   },
   {
-    "id": "61702928192273",
-    "title": "Tarea 6",
-    "description": "Descripcion 6",
-    "dueDate": "2023-12-24",
+    "id": 1703026910299,
+    "title": "Tareas",
+    "description": "asdasd dasda dasddd sdsd d asdsddsd sd dsddsd dsd dsdsd",
+    "dueDate": "2023-12-28",
     "priority": "priority-3",
     "isCompleted": false,
-    "category": "Categoria 6",
-    "dueDateView": "En 6 días",
-    "daysLeft": 6
+    "category": "123",
+    "dueDateView": "En 9 días",
+    "daysLeft": 9
   }
 ]

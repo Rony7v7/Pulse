@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1703022737683,
+    "title": "Code Review",
+    "description": "Code review semanal",
+    "dueDate": "2023-12-21",
+    "priority": "priority-2",
+    "isCompleted": false,
+    "category": "Code",
+    "dueDateView": "En 2 días",
+    "daysLeft": 2
+  },
+  {
+    "id": 1703022795098,
+    "title": "Odontología",
+    "description": "Ir a cita medica en el consultorio A.\r\nHora 8 am",
+    "dueDate": "2023-12-26",
+    "priority": "priority-2",
+    "isCompleted": false,
+    "category": "Salud",
+    "dueDateView": "En 7 días",
+    "daysLeft": 7
+  },
+  {
+    "id": 1703022833150,
+    "title": "Testing",
+    "description": "Ejecutar pruebas unitarias del proyecto",
+    "dueDate": "2023-12-20",
+    "priority": "priority-1",
+    "isCompleted": false,
+    "category": "Code",
+    "dueDateView": "Mañana",
+    "daysLeft": 1
+  },
+  {
+    "id": 1703022964868,
+    "title": "Evento Grados",
+    "description": "Evento de Grados de Especializacion ",
+    "dueDate": "2023-12-24",
+    "priority": "priority-3",
+    "isCompleted": false,
+    "category": "",
+    "dueDateView": "En 5 días",
+    "daysLeft": 5
+  },
+  {
+    "id": 1703023078487,
+    "title": "Cita Medica",
+    "description": "Cita medica con el optómetra. \r\nCali\r\nDoctor ...\r\nHora 7 am",
+    "dueDate": "2024-01-21",
+    "priority": "priority-1",
+    "isCompleted": false,
+    "category": "Salud",
+    "dueDateView": "En 33 días",
+    "daysLeft": 33
+  }
+]
