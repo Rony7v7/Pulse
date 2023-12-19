@@ -51,6 +51,10 @@ dialog {
     border: none;
 }
 
+i {
+    font-size: 16.5px;
+}
+
 ::-webkit-scrollbar {
     width: 0px;
 }
@@ -293,4 +297,46 @@ dialog {
 
 .disabled {
     display: none;
+}
+
+.menu-button {
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0.5%;
+}
+
+.menu-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.search-bar {
+    padding-left: 2%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.search-bar input {
+    padding-left: 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #343a40;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12 px;
+    border: none;
+    outline: none;
+}
+
+.search-bar select {
+    padding-left: 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #343a40;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12 px;
+    border: none;
+    outline: none;
 }

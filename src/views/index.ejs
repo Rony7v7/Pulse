@@ -35,15 +35,27 @@
         </section>
 
         <section class="tasks-section mh-100">
-            <header>
+            <header class="">
                 <h1>Tareas y Recordatorios</h1>
                 <h4><%= date[3] %>, <%= username %> ✌</h4>
             </header>
 
-            <div class="container">
-                <button id="btnAddTask">Agregar Tarea</button>
-                <button id="btnCheckTask" class="">OK</button>
-                <button id="btnOptions" class="options-button">&#8230;</button>
+            <div class="">
+                <div class="d-flex">
+                    <button id="btnAddTask" class="menu-button h-100">
+                        <i class="bi bi-journal-plus"></i>
+                        <span>Añadir</span>
+                    </button>
+                    <button id="btnCheckTask" class="menu-button">
+                        <i class="bi bi-journal-check"></i>
+                        <span>Completar</span>
+                    </button>
+                    <button id="btnOptions" class="menu-button">
+                        <i class="bi bi-input-cursor-text"></i>
+                        <!-- <i class="bi bi-journal-arrow-down"></i> -->
+                        <span>Buscar</span>
+                    </button>
+                </div>
 
                 <%- include('partials/searchBar') %>
 
