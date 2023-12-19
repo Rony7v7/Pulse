@@ -84,6 +84,24 @@ document.addEventListener('DOMContentLoaded', function () {
     
     tasks.forEach(task => {
         const checkbox = task.querySelector('.task-checkbox');
+        const description = task.querySelector('.task-description');
+        const descriptionContent = description.textContent;
+        const info = task.querySelector('.task-info');
+
+
+        // si el contenedor de la descripcion mide mas del 30% del ancho del task, cortar el texto
+        if (description.offsetWidth > task.offsetWidth * 0.3) {
+            description.textContent = description.textContent.slice(0, 45) + '...';
+        }
+
+        //añadir etiqueta hoover al pasar el raton por encima de la descripcion completa
+        description.addEventListener('mouseover', function () {
+            description.setAttribute('title', descriptionContent);
+        });
+
+        info.addEventListener('mouseover', function () {
+            info.setAttribute('title', task.querySelector('.task-due-date').textContent);
+        });
 
         task.addEventListener('click', function (event) {
             if (checkbox !== null & event.target !== checkbox) {

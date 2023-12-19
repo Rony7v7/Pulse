@@ -8,11 +8,16 @@
         <li class="task" id="<%= task.id %>">
             <div class="task-header">
                 <input type="checkbox" class="task-checkbox" id="<%= task.id %>">
-                <span ><%= task.title %></span>
-                <div class="text-body-secondary"><%= task.dueDateView %> | <%= task.dueDate %></div>
+                <span class="task-title"><%= task.title %></span>
+                <div class="task-info text-body-secondary"><%= task.dueDateView %> | <%= task.category %></div>
+                <div class="task-due-date" hidden ><%= task.dueDate %></div>
             </div>
             <div class="task-content">
-                <div class="text-body-secondary"><%= task.description %></div>
+                <div class="text-body-secondary">
+                    <span class="task-description">
+                        <%= task.description %>
+                    </span>
+                </div>
             </div>
             <div class="priority-circle <%= task.priority %>"></div>
         </li>
@@ -37,7 +42,9 @@
                 <div class="text-body-secondary">Completada | <%= task.dueDate %></div>
             </div>
             <div class="task-content">
-                <div class="text-body-secondary"><%= task.description %></div>
+                <div class="text-body-secondary">
+                    <span class="task-description"><%= task.description %></span>
+                </div>
             </div>
             <div class="priority-circle"></div>
         </li>
