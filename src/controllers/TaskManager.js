@@ -42,7 +42,7 @@ class TaskManager {
     }
 
     getTask(id) {
-        return this.tasks.find((task) => task.id === id);
+        return this.tasks.find((task) => task.id == id);
     }
 
     renderTasks(isFiltering = false) {
@@ -146,7 +146,7 @@ class TaskManager {
     completeTasks(ids) {
         ids.forEach((id) => {
             const task = this.getTask(id);
-            task.isCompleted = true;
+            if (task) task.complete();
         });
         this.saveTasks();
     }
